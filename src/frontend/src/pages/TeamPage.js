@@ -16,7 +16,7 @@ export const TeamPage = () => {
 
             };
             fetchMatches();
-        },[]
+        },[teamName]
 
     );
 
@@ -28,8 +28,8 @@ export const TeamPage = () => {
   return (
     <div className="TeamPage">
     <h1>{team.teamName} </h1>
-        <MatchDetailCard match={team.matches[0]} />
-        {team.matches.slice(1).map(match => <MatchSmallCard  match={match} />)}
+        <MatchDetailCard teamName={team.teamName} match={team.matches[0]} />
+        {team.matches.slice(1).map(match => <MatchSmallCard teamName={team.teamName}  match={match} />)}
         
     </div>
   );
